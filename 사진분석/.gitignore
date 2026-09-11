@@ -1,0 +1,9 @@
+#깃허브로 업로드하지 않는 예외파일들
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+build/
+*.spec
