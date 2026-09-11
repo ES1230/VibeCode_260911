@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tetris</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="game">
+        <header>
+            <h1>NEON <span>TETRIS</span></h1>
+            <p>블록을 쌓고 최고 점수에 도전하세요</p>
+        </header>
+
+        <section class="game-layout">
+            <div class="board-wrap">
+                <canvas id="tetris" width="300" height="600"></canvas>
+                <div id="message" class="message">
+                    <strong>NEON TETRIS</strong>
+                    <button id="startButton">게임 시작</button>
+                </div>
+            </div>
+
+            <aside class="panel">
+                <div class="info-box">
+                    <span>점수</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>최고 점수</span>
+                    <strong id="highScore">0</strong>
+                </div>
+
+                <div class="next-box">
+                    <span>다음 블록</span>
+                    <canvas id="next" width="120" height="120"></canvas>
+                </div>
+
+                <button id="pauseButton" class="secondary" disabled>일시정지</button>
+
+                <div class="controls">
+                    <h3>조작 방법</h3>
+                    <p>← → 이동</p>
+                    <p>↑ 회전</p>
+                    <p>↓ 빠르게 내리기</p>
+                    <p>스페이스 즉시 내리기</p>
+                    <p>P 일시정지</p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

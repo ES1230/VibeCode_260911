@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap");
+
+:root {
+    --bg: #090b1d;
+    --panel: rgba(20, 25, 55, 0.9);
+    --cyan: #5ee7ff;
+    --purple: #a855f7;
+    --text: #f4f7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text);
+    font-family: "Orbitron", "맑은 고딕", sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #24205e 0, transparent 35%),
+        radial-gradient(circle at 80% 80%, #32124b 0, transparent 35%),
+        var(--bg);
+}
+
+.game {
+    width: min(920px, 94%);
+    margin: 0 auto;
+    padding: 28px 0;
+}
+
+header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(28px, 6vw, 52px);
+    letter-spacing: 5px;
+    text-shadow: 0 0 18px var(--cyan);
+}
+
+h1 span {
+    color: var(--cyan);
+}
+
+header p {
+    margin: 10px 0 0;
+    color: #aeb9dc;
+    font-size: 12px;
+}
+
+.game-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.board-wrap {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 3px solid #6d7cff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+        0 0 12px #6d7cff,
+        0 0 45px rgba(168, 85, 247, 0.5);
+}
+
+#tetris {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #080b1b;
+}
+
+.message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    background: rgba(5, 7, 22, 0.78);
+    text-align: center;
+}
+
+.message strong {
+    color: var(--cyan);
+    font-size: 22px;
+    text-shadow: 0 0 14px var(--cyan);
+}
+
+button {
+    border: 0;
+    border-radius: 8px;
+    padding: 13px 22px;
+    color: #081020;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--cyan), #9381ff);
+    box-shadow: 0 0 16px rgba(94, 231, 255, 0.5);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    transform: none;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 220px;
+}
+
+.info-box,
+.next-box,
+.controls {
+    padding: 16px;
+    border: 1px solid rgba(129, 145, 255, 0.35);
+    border-radius: 12px;
+    background: var(--panel);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-box span,
+.next-box span {
+    color: #aeb9dc;
+    font-size: 12px;
+}
+
+.info-box strong {
+    color: var(--cyan);
+    font-size: 22px;
+}
+
+.next-box {
+    text-align: center;
+}
+
+#next {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 12px auto 0;
+    border-radius: 8px;
+    background: #080b1b;
+}
+
+.secondary {
+    width: 100%;
+    color: var(--text);
+    background: linear-gradient(135deg, #343b78, #5c3a91);
+}
+
+.controls h3 {
+    margin: 0 0 12px;
+    color: var(--cyan);
+    font-size: 14px;
+}
+
+.controls p {
+    margin: 7px 0;
+    color: #c6cbea;
+    font-family: "맑은 고딕", sans-serif;
+    font-size: 12px;
+}
+
+@media (max-width: 650px) {
+    .game {
+        padding: 18px 0;
+    }
+
+    .game-layout {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: min(400px, 100%);
+    }
+
+    .next-box,
+    .controls,
+    .secondary {
+        grid-column: span 2;
+    }
+}
